@@ -63,11 +63,21 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  - Checked network tab and observed the error 500.
+  - Checked the backend logs in the terminal and observed an uninitialized constant Toys in toys_controller#create
+  - changed Toys to Toy
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  - Observed syntax error: Unexpected end of JSON input
+  - Checked to see the update method in the toys_controller returns json.
+  - rendered correct json in the update method.
+
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  - Observed 404 not found in the network tab.
+  - Checked logs in the backend, observed Routing error, No route matches DELETE "toys/:id"
+  - Added destroy route in config/routes
